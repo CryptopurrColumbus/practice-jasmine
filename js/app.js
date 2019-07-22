@@ -52,7 +52,7 @@ function init() {
        success: function (result, status){
 
                  var container = $('.feed'),
-                     title = $('.header-title'),
+                     title = $('.header-title'),  
                      entries = result.feed.entries,
                      entriesLen = entries.length,
                      entryTemplate = Handlebars.compile($('.tpl-entry').html());
@@ -70,7 +70,7 @@ function init() {
                  });
 
                  if (cb) {
-                     cb();
+                     cb();    
                  }
                },
        error: function (result, status, err){
@@ -118,7 +118,6 @@ $(function() {
      */
     feedList.on('click', 'a', function() {
         var item = $(this);
-
         $('body').addClass('menu-hidden');
         loadFeed(item.data('id'));
         return false;
